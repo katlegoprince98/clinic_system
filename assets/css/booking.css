@@ -1,0 +1,59 @@
+body{
+    text-align:center;
+    background-image:url("../images/mardcelo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+div > header > img{
+    display: block;
+    
+    margin: 6px 0 0 6px;
+}
+table, th, td {
+    border: 1px solid grey;
+  }
+  table {
+    width: 50%;
+  }
+  
+  th {
+    height: 70px;
+  }
+  td, th {
+    text-align: center;
+  }
+  th{
+    color: blue;
+    font-size: 20px;
+  }
+  tr{
+    color: white;
+    font-size: 14px;
+  }
+  tr button{
+    border: none;
+    outline: none;
+    color: red;
+    background-color: blue;
+  }
+
+header button{
+  justify-content: right;
+  align-items: right;
+  margin-left: 850px;
+  padding: 5px;
+  margin-top: 10px;
+  border: none;
+  outline: none;
+  color: blue;
+  background-color: red;
+  font-size: 10px;
+  font-family: sans-serif;
+}
+.list form{
+  width: 200px;
+  height: 200px;
+  background-color: #7c7c7c7b;
+}

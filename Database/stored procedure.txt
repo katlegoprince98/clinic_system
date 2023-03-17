@@ -1,0 +1,25 @@
+DELIMITER $$
+
+CREATE
+    /*[DEFINER = { user | CURRENT_USER }]*/
+    PROCEDURE `clinicdb`.`treatment`(
+     v_names VARCHAR(50),
+     v_cond VARCHAR(50),
+     v_status VARCHAR(50),
+     v_report VARCHAR(1000),
+     v_nurse VARCHAR(100),
+     v_boo INT(10)
+          
+    
+    )
+        
+	BEGIN
+	INSERT INTO tblfeedback (patient_name,patient_cond,fee_status,fee_report,nurse_name, booking_id)
+        VALUES (v_names, v_cond, v_status, v_report, v_nurse, v_boo);
+        
+        UPDATE booking SET booking_status = v_status 
+        WHERE booking_id = v_boo; 
+
+	END$$
+
+DELIMITER ;

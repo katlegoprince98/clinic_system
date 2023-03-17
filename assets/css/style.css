@@ -1,0 +1,26 @@
+#inputForLogin{
+    padding:6px;
+    width:25%;
+    text-align: center;
+}
+#ourButton{
+    padding: 10px;
+    width: 10%;
+}
+.forms{
+    margin-top: 5%;
+}
+body{
+    background-image: url("../images/xas.jpg");
+    background-repeat: no-repeat;
+    background-size:cover ;
+    background-attachment: fixed;
+    background-position: center;
+    
+}
+.left{
+    width: 200px;
+    height: 100vh;
+    background-color: aliceblue;
+    
+}
