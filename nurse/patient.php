@@ -6,7 +6,7 @@ if(!isset($_SESSION['id'])){
     header('location: ../index.php');
 }
 
-$get_bookings = "SELECT b.booking_id as id, u.first_name as user_name, u.last_name as user_lname, s.ser_type as ser, b.booking_date as boo_date, b.booking_status as boo_status, c.camp_name as cam_name
+$get_bookings = "SELECT b.booking_id as id, u.first_name as user_name, u.last_name as user_lname, s.ser_type as ser, b.booking_status as boo_status, c.camp_name as cam_name
  from booking b, users u, campus c, tblser s
  where u.user_id = b.user_id
  and s.ser_id = b.ser_id
@@ -115,7 +115,7 @@ if(isset($_POST['refer'])){
            </div>
            </center>
 
-</form><br><br><br>
+</form><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <footer style="max-height:min-content;background-color: rgba(0, 0,0,0.5);">
     <center><p style="color:darkred;font-size: xx-large;" >Emergency Call: <a href="#">0861 960 960</a></p></center>
 </footer><center>

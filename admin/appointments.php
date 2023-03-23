@@ -5,7 +5,7 @@ if(!isset($_SESSION['id'])){
     header('location: ../index.php');
 }
 
-$get_bookings = "SELECT b.booking_id as id, u.first_name as user_name, u.last_name as user_lname, s.ser_type as ser, b.booking_date as boo_date, b.booking_status as boo_status, c.camp_name as cam_name
+$get_bookings = "SELECT b.booking_id as id, u.first_name as user_name, u.last_name as user_lname, s.ser_type as ser, b.start_time  as start_t,b.end_time  as end_t, b.booking_status as boo_status, c.camp_name as cam_name
  from booking b, users u, campus c, tblser s
  where u.user_id = b.user_id
  and s.ser_id = b.ser_id

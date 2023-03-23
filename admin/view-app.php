@@ -6,7 +6,7 @@ if(!isset($_SESSION['id'])){
     header('location: ../index.php');
 }
 
-$get_bookings = "SELECT b.booking_id as id, u.first_name as user_name, u.last_name as user_lname, s.ser_type as ser, b.booking_date as boo_date, b.booking_status as boo_status, c.camp_name as cam_name
+$get_bookings = "SELECT b.booking_id as id, u.first_name as user_name, u.last_name as user_lname, s.ser_type as ser, b.start_time  as start_t,b.end_time  as end_t, b.booking_status as boo_status, c.camp_name as cam_name
  from booking b, users u, campus c, tblser s
  where u.user_id = b.user_id
  and s.ser_id = b.ser_id
@@ -19,7 +19,8 @@ $booking_fields = mysqli_query($conn, $get_bookings);
 
 while($row = mysqli_fetch_assoc($booking_fields)){
     $full_names = $row["user_name"] . ' ' .  $row["user_lname"];
-    $boo_date =  $row["boo_date"];
+    $start_t =  $row["start_t"];
+    $end_t =  $row["end_t"];
     $ser =  $row["ser"];
     $cam_name =  $row["cam_name"];
    $boo_status =  $row["boo_status"];
@@ -89,7 +90,7 @@ if(isset($_POST['reject'])){
               <div class="con">
                 <h3>DETAILS</h3><br>
                 <h4>Name: <?php echo $full_names;   ?></h4>
-                <h4>Date: <?php echo $boo_date;   ?></h4>
+                <td><?php echo $start_t  . '-' . '<br>'  . $end_t; ?></td>
                 <h4>Service:<?php echo $ser;   ?></h4>
                 <h4>Campus: <?php echo $cam_name;   ?></h4>
                 <button name="approve">APPROVE</button>

@@ -13,7 +13,7 @@ $id = $_SESSION['userID'];
 <!DOCTYPE html>
 <html>
     <head>
-        <title> booking   </title>
+        <title> Booking   </title>
         <link rel="icon" href="../assets/images/tut.png"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -83,7 +83,16 @@ $id = $_SESSION['userID'];
     <label for="calender"><h3>calender</h3></label></center>
  
     <center><div style="width:30%">
-        <input name="date" required class="form-select form-select-lg" type="datetime-local" id="calender" name="calender ">
+    <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+      
+        <label for="time">Time:</label>
+        <select id="time" name="time" required>
+          <option value="9:00 AM">9:00 AM</option>
+          <option value="10:00 AM">10:00 AM</option>
+          <option value="11:00 AM">11:00 AM</option>
+          <!-- Add more options as needed -->
+        </select>
     </div>
     <br>
     <button type="submit" name="submit" style="padding:12px;width: 10%;" class="btn btn-primary btn-sm">Book</button><br/>
