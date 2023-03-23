@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2023 at 05:51 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Mar 23, 2023 at 09:25 AM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,12 +44,21 @@ DELIMITER ;
 
 CREATE TABLE `booking` (
   `booking_id` int(10) NOT NULL,
-  `booking_date` date DEFAULT NULL,
   `booking_status` varchar(20) DEFAULT NULL,
+  `start_time` datetime NOT NULL,
+  `end_time` datetime NOT NULL,
   `ser_id` int(10) NOT NULL,
   `camp_id` int(10) NOT NULL,
   `user_id` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`booking_id`, `booking_status`, `start_time`, `end_time`, `ser_id`, `camp_id`, `user_id`) VALUES
+(27, 'REJECTED', '2023-03-23 09:00:00', '2023-03-23 10:00:00', 1, 1, 1),
+(28, 'APPROVED', '2023-03-24 09:00:00', '2023-03-24 10:00:00', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -60,7 +69,7 @@ CREATE TABLE `booking` (
 CREATE TABLE `campus` (
   `camp_id` int(10) NOT NULL,
   `camp_name` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `campus`
@@ -92,7 +101,7 @@ CREATE TABLE `tblfeedback` (
   `fee_report` varchar(1000) DEFAULT NULL,
   `nurse_name` varchar(100) NOT NULL,
   `booking_id` int(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -103,7 +112,7 @@ CREATE TABLE `tblfeedback` (
 CREATE TABLE `tblser` (
   `ser_id` int(10) NOT NULL,
   `ser_type` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tblser`
@@ -129,7 +138,7 @@ CREATE TABLE `users` (
   `tut_no` varchar(9) DEFAULT NULL,
   `password` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -187,7 +196,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `booking_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `campus`
