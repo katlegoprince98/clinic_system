@@ -91,6 +91,10 @@ $id = $_SESSION['userID'];
           <option value="9:00 AM">9:00 AM</option>
           <option value="10:00 AM">10:00 AM</option>
           <option value="11:00 AM">11:00 AM</option>
+          <option value="12:00 AM">12:00 AM</option>
+          <option value="13:00 AM">13:00 AM</option>
+          <option value="14:00 AM">14:00 AM</option>
+          <option value="15:00 AM">15:00 AM</option>
           <!-- Add more options as needed -->
         </select>
     </div>

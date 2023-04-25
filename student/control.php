@@ -20,11 +20,13 @@ $campus = $_POST['campus'];
 
 
 // Create start and end times
-$start_time = date("Y-m-d H:i:s", strtotime("$date $time"));
-$end_time = date("Y-m-d H:i:s", strtotime("$start_time +1 hour"));
+$start_time = date("H:i", strtotime("$time"));
+$end_time = date("H:i", strtotime("$start_time +1 hour"));
+
+
 
 // Check if appointment already exists
-$sql = "SELECT * FROM booking WHERE start_time='$start_time'";
+$sql = "SELECT * FROM booking WHERE start_time='$start_time' AND boodate = '$date'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -39,8 +41,8 @@ if ($result->num_rows > 0) {
  <?php
 } else {
   // Insert appointment into database
-  $sql = "INSERT INTO booking (booking_status, start_time, end_time, ser_id, camp_id, user_id)
-  VALUES ('PENDING','$start_time', '$end_time', '$service', '$campus', '$id' )";
+  $sql = "INSERT INTO booking (booking_status, start_time, end_time, ser_id, camp_id, user_id, boodate)
+  VALUES ('PENDING','$start_time', '$end_time', '$service', '$campus', '$id', '$date' )";
 
 
   if ($conn->query($sql) === TRUE) {

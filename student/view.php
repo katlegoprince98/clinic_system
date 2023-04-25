@@ -7,7 +7,7 @@ $conn = new mysqli('localhost', 'root', '', 'clinicdb');
 $id = $_SESSION['userID'];
 
 
-$get = "SELECT u.first_name as user_name, u.last_name as user_lname, s.ser_type as ser, b.start_time as start_t, b.end_time as end_t, b.booking_status as boo_status, c.camp_name as cam_name
+$get = "SELECT u.first_name as user_name, u.last_name as user_lname, s.ser_type as ser, b.start_time as start_t, b.end_time as end_t, b.boodate as boodate, b.booking_status as boo_status, c.camp_name as cam_name
         from booking b, users u, campus c, tblser s
          where u.user_id = b.user_id
          and b.user_id = '$id'
@@ -24,6 +24,7 @@ $res = mysqli_query($conn, $get);
      $ser =  $row["ser"];
      $cam_name =  $row["cam_name"];
      $boo_status =  $row["boo_status"];
+     $boodate = $row["boodate"];
    }
  }
 
@@ -72,7 +73,7 @@ $res = mysqli_query($conn, $get);
     <td><?php echo $full_names; ?></td>
     <td><?php echo $cam_name; ?></td>
     <td><?php echo $ser; ?></td>
-    <td><?php echo $start  . '-' . '<br>'  . $end; ?></td>
+    <td><?php echo $start  . '-' . '<br>'  . $end . '(' .$boodate. ')'; ?></td>
     
     <td><?php echo $boo_status; ?></td>
     <td><button name="cancel">CANCEL</button></td>
