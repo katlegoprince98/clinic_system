@@ -22,9 +22,11 @@
             <input id="inputForLogin" name="number" type="text" placeholder="Student Number" /><br/><br/>
             <input id="inputForLogin" name="password" type="password" placeholder="Password" /><br/><br/><br/>
             
-            <input type="submit" name="submit" value="LOGIN"><br>
-          <a href="forgot-password.php" style="color:aqua; font-size:25px;">forgot password</a>
+            <input class="btn btn-success" type="submit" name="submit" value="LOGIN"><br>
+           
         </form>
+        <br>
+       
     </div><br><br>
     </center>
 </body>

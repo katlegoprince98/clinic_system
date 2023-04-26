@@ -7,11 +7,25 @@ if(!isset($_SESSION['id'])){
 
 $get_bookings = "SELECT b.booking_id as id, u.first_name as user_name, u.last_name as user_lname, s.ser_type as ser, b.start_time  as start_t,b.end_time  as end_t, b.booking_status as boo_status, c.camp_name as cam_name
  from booking b, users u, campus c, tblser s
- where u.user_id = b.user_id
- and s.ser_id = b.ser_id
+ where s.ser_id = b.ser_id
  and c.camp_id = b.camp_id
- and b.booking_status = 'PENDING'";
+ and b.booking_status = 'ACTIVE'";
 $booking_fields = mysqli_query($conn, $get_bookings);
+
+$count = "SELECT COUNT(booking_status) as tot from booking where booking_status = 'ACTIVE'";
+$total_active = mysqli_query($conn, $count);
+
+while($row = mysqli_fetch_assoc($total_active)){
+  $tot_sta = $row["tot"];
+}
+
+
+$count_c = "SELECT COUNT(booking_status) as tot from booking where booking_status = 'CANCELLED'";
+$total_can = mysqli_query($conn, $count_c);
+
+while($row = mysqli_fetch_assoc($total_can)){
+  $tot_can = $row["tot"];
+}
 
 
 ?>
@@ -45,21 +59,23 @@ $booking_fields = mysqli_query($conn, $get_bookings);
   <tr>
     
     <th>APPOINTMENTS</th>
+    <th>Total</th>
     <th>Action</th>
   </tr>
-    <?php
+  
       
-       while($row = mysqli_fetch_assoc($booking_fields)){
-          echo '
-          <tr>
-          <td>'.$row["user_name"].'  '.$row["user_lname"].'</td>
-          <td><a href="view-app.php?boo='.$row["id"].'">VIEW</a></td>
-          
-          </tr>
-          ';
-       }
+      <tr>
+      <td>Active</td>
+      <td><?php echo $tot_sta;   ?></td>
+      <td><a href="active.php">View</a></td>
+      </tr>
+      <tr>
+      <td>Cancelled</td>
+      <td><?php echo $tot_can;   ?></td>
+      <td><a href="cancelled.php">View</a></td>
+      </tr>
  
-    ?>
+
   
 </table><br><br><br>
 </form>

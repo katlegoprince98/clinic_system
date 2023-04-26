@@ -42,7 +42,7 @@ if ($result->num_rows > 0) {
 } else {
   // Insert appointment into database
   $sql = "INSERT INTO booking (booking_status, start_time, end_time, ser_id, camp_id, user_id, boodate)
-  VALUES ('PENDING','$start_time', '$end_time', '$service', '$campus', '$id', '$date' )";
+  VALUES ('ACTIVE','$start_time', '$end_time', '$service', '$campus', '$id', '$date' )";
 
 
   if ($conn->query($sql) === TRUE) {
@@ -59,13 +59,13 @@ if ($result->num_rows > 0) {
   }
 }
 
-$conn->close();
+
 
    
 
 
 
-  /*if(isset($_POST['submit'])){
+  if(isset($_POST['submit'])){
       //get values from form
        $campus = $_POST['campus'];
        $service = $_POST['service'];
@@ -93,22 +93,6 @@ $conn->close();
 
 
 
-  if(isset($_POST['cancel'])){
-    $id = $_SESSION['userID'];
-    $update = "UPDATE booking SET booking_status = 'CANCELLED' 
-                 WHERE user_id = '$id'";
 
-    if(mysqli_query($conn, $update)){
-        ?>
-        <script>
-            window.alert("YOUR APPOINTMENT IS CANCELLED SUCCEFFULLY");
-            window.location.href="view.php";
-        </script>
-
-        <?php
-    }
-
-  }
- 
-*/
+  $conn->close();
 ?>

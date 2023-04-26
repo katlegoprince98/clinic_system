@@ -28,6 +28,25 @@ $res = mysqli_query($conn, $get);
    }
  }
 
+
+ if(isset($_POST['cancel'])){
+  $id = $_SESSION['userID'];
+  $update = "UPDATE booking SET booking_status = 'CANCELLED' 
+               WHERE user_id = '$id'";
+
+  if(mysqli_query($conn, $update)){
+      ?>
+      <script>
+          window.alert("YOUR APPOINTMENT IS CANCELLED SUCCEFFULLY");
+          window.location.href="view.php";
+      </script>
+
+      <?php
+  }
+
+}
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -57,7 +76,7 @@ $res = mysqli_query($conn, $get);
         
         
       <center><br><br><br>
-      <form action="control.php" method="post">
+      <form action="#" method="post">
     <table class="table">
   <tr>
     <th>#</th>

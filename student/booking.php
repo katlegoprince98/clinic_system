@@ -99,7 +99,7 @@ $id = $_SESSION['userID'];
         </select>
     </div>
     <br>
-    <button type="submit" name="submit" style="padding:12px;width: 10%;" class="btn btn-primary btn-sm">Book</button><br/>
+    <button type="submit" name="submit" style="padding:12px;width: 10%;" class="btn btn-succes btn-sm">Book</button><br/>
 </center>
 
 </form><br><br><br>
@@ -123,6 +123,8 @@ $obt = "SELECT * FROM tblser";
 
 return mysqli_query($conn, $obt);
 }
+
+
 
 
 ?>
