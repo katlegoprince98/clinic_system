@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2023 at 04:46 AM
+-- Generation Time: Apr 28, 2023 at 02:14 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -58,7 +58,10 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`booking_id`, `booking_status`, `start_time`, `end_time`, `ser_id`, `camp_id`, `user_id`, `boodate`) VALUES
-(43, 'PENDING', '09:00:00', '10:00:00', 1, 1, 1, '2023-04-25');
+(44, 'CANCELLED', '09:00:00', '10:00:00', 1, 1, 1, '2023-04-27'),
+(45, 'CANCELLED', '09:00:00', '10:00:00', 1, 1, 1, '2023-04-26'),
+(48, 'ACTIVE', '09:00:00', '10:00:00', 1, 1, 1, '2023-04-29'),
+(49, 'ACTIVE', '09:00:00', '10:00:00', 1, 1, 1, '2023-05-04');
 
 -- --------------------------------------------------------
 
@@ -196,7 +199,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `booking_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `campus`
