@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2023 at 02:14 PM
+-- Generation Time: May 01, 2023 at 10:24 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -58,10 +58,7 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`booking_id`, `booking_status`, `start_time`, `end_time`, `ser_id`, `camp_id`, `user_id`, `boodate`) VALUES
-(44, 'CANCELLED', '09:00:00', '10:00:00', 1, 1, 1, '2023-04-27'),
-(45, 'CANCELLED', '09:00:00', '10:00:00', 1, 1, 1, '2023-04-26'),
-(48, 'ACTIVE', '09:00:00', '10:00:00', 1, 1, 1, '2023-04-29'),
-(49, 'ACTIVE', '09:00:00', '10:00:00', 1, 1, 1, '2023-05-04');
+(50, 'ACTIVE', '09:00:00', '10:00:00', 1, 1, 6, '2023-05-01');
 
 -- --------------------------------------------------------
 
@@ -148,10 +145,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `type`, `tut_no`, `password`, `email`) VALUES
-(1, 'Katlego', 'Komane', 'student', '219976123', 'K@tlego98', '219976123@tut4life.ac.za'),
 (2, 'Thokozane', 'Dlamini', 'admin', 'admin', 'admin', 'admin@tut4life.ac.za'),
-(3, 'Thabiso', 'Makua', 'student', '217777777', 'password', 'mt@gmail.com'),
-(4, 'Angel', 'Magagula', 'nurse', 'nurse', 'nurse', 'nurse@gmail.com');
+(4, 'Angel', 'Magagula', 'nurse', 'nurse', 'nurse', 'nurse@gmail.com'),
+(5, 'Ratile', 'Makola', 'student', '219990472', '12345', '219990472@tut4life.ac.za'),
+(6, 'Scelo', 'Mabinza', 'student', '218484041', 'Sicelo@81', '218484041@tut4life.ac.za');
 
 --
 -- Indexes for dumped tables
@@ -199,7 +196,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `booking_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `campus`
@@ -223,7 +220,7 @@ ALTER TABLE `tblser`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

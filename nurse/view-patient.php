@@ -10,7 +10,7 @@ $get_bookings = "SELECT b.booking_id as id, u.first_name as user_name, u.last_na
  where u.user_id = b.user_id
  and s.ser_id = b.ser_id
  and c.camp_id = b.camp_id
- and b.booking_status = 'APPROVED'";
+ and b.booking_status = 'ACTIVE'";
 $booking_fields = mysqli_query($conn, $get_bookings);
 
 

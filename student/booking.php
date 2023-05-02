@@ -89,17 +89,23 @@ $id = $_SESSION['userID'];
         <label for="time">Time:</label>
         <select id="time" name="time" required>
           <option value="9:00 AM">9:00 AM</option>
-          <option value="10:00 AM">10:00 AM</option>
-          <option value="11:00 AM">11:00 AM</option>
-          <option value="12:00 AM">12:00 PM</option>
-          <option value="13:00 AM">13:00 PM</option>
-          <option value="14:00 AM">14:00 PM</option>
+          <option value="10:00 AM">09:30 AM</option>
+          <option value="11:00 AM">10:00 AM</option>
+          <option value="12:00 AM">10:30 AM</option>
+          <option value="13:00 AM">11:00 AM</option>
+          <option value="14:00 AM">11:30 AM</option>
+          <option value="15:00 AM">12:00 PM</option>
+          <option value="15:00 AM">12:30 PM</option>
+          <option value="15:00 AM">13:00 PM</option>
+          <option value="15:00 AM">13:30 PM</option>
+          <option value="15:00 AM">14:00 PM</option>
+          <option value="15:00 AM">14:30 PM</option>
           <option value="15:00 AM">15:00 PM</option>
-          <!-- Add more options as needed -->
+          <option value="15:00 AM">15:30 PM</option>
         </select>
     </div>
     <br>
-    <button type="submit" name="submit" style="padding:12px;width: 10%;" class="btn btn-succes btn-sm">Book</button><br/>
+    <button type="submit" name="submit" class="btn btn-succes btn-sm">Book</button><br/>
 </center>
 
 </form><br><br><br>

@@ -21,7 +21,7 @@ $campus = $_POST['campus'];
 
 // Create start and end times
 $start_time = date("H:i", strtotime("$time"));
-$end_time = date("H:i", strtotime("$start_time +1 hour"));
+$end_time = date("H:i", strtotime("$start_time 30 minutes"));
 
 
 
