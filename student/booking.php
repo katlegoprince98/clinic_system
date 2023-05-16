@@ -13,12 +13,28 @@ $id = $_SESSION['userID'];
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Booking   </title>
+        <title> Booking  </title>
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/overcast/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js" integrity="sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
         <link rel="icon" href="../assets/images/tut.png"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../assets/css/booking.css">
+        <script>
+            $function () {
+               var minDate = new Date();
+               $("#date").datepicker({
+                minDate: minDate,
+                dateFormat: 'yy/mm/dd',
+                changeYear: true,
+                changeMonth: true,
+                
+               });
+            });
+        </script>
     </head>
     <body>
         <div >
@@ -33,12 +49,13 @@ $id = $_SESSION['userID'];
         method="POST">
 
             <center>
-                <label for="campus"><h3>Choose Campus</h3></label></center>
+                <label style="font-size: 13px; color:rgb(202, 242, 242);" for="campus"><h3>Choose Campus</h3></label></center>
                
                 <center>
                     <div style="width:30%">
                     <select required  style="justify-content: center;text-align: center;" class="form-select form-select-lg" name="campus"
                     id="campus">
+                    <option value="" selected disabled>Select campus</option>
                     <?php
                          include('../config.php');
                          $get = "SELECT * FROM campus";
@@ -59,12 +76,13 @@ $id = $_SESSION['userID'];
 
 
      
-        <center><label for="service"><h3>Choose Service</h3></center></label>
+        <center><label style="font-size: 13px; color:rgb(202, 242, 242);" for="service"><h3>Choose Service</h3></center></label>
        
         <center>
         <div  style="width:30%">
         <select required  style="justify-content: center;text-align: center;" class="form-select form-select-lg" name="service"
         id="service">
+        <option value="" selected disabled>Select service</option>
         <?php
                          $campus = getServ();
 
@@ -79,33 +97,34 @@ $id = $_SESSION['userID'];
     </select></div></center>
 
 <br><center>
-    <p>open from <b> 08:00 </b> to <b> 15:00 </b></p>
-    <label for="calender"><h3>calender</h3></label></center>
+    <p style="font-size: 17px; color:rgb(202, 242, 242);">open from <b> 08:00 </b> to <b> 16:00 </b></p>
+    <label style="font-size: 13px; color:rgb(202, 242, 242);" for="calender"><h3>calender</h3></label></center>
  
-    <center><div style="width:30%">
-    <label for="date">Date:</label>
-        <input type="date" id="date" name="date" required>
+    <center><div style="width:70%">
+    <label style="font-size: 13px; color:rgb(20 2, 242, 242);" for="date">Date:</label>
+        <input style="width: 120px; height: 30px;" type="text" placeholder="Date" id="date" name="date" required>
       
-        <label for="time">Time:</label>
-        <select id="time" name="time" required>
-          <option value="9:00 AM">9:00 AM</option>
-          <option value="10:00 AM">09:30 AM</option>
-          <option value="11:00 AM">10:00 AM</option>
-          <option value="12:00 AM">10:30 AM</option>
-          <option value="13:00 AM">11:00 AM</option>
-          <option value="14:00 AM">11:30 AM</option>
-          <option value="15:00 AM">12:00 PM</option>
-          <option value="15:00 AM">12:30 PM</option>
-          <option value="15:00 AM">13:00 PM</option>
-          <option value="15:00 AM">13:30 PM</option>
-          <option value="15:00 AM">14:00 PM</option>
-          <option value="15:00 AM">14:30 PM</option>
-          <option value="15:00 AM">15:00 PM</option>
-          <option value="15:00 AM">15:30 PM</option>
+        <label style="font-size: 13px; color:rgb(202, 242, 242);" for="time">Time:</label>
+        <select id="time" name="time" style="width: 120px; height: 30px;"  required>
+        <option value="" selected disabled>Select time</option>
+          <option value="09:00:00 AM">9:00 AM</option>
+          <option value="09:30:00 AM">09:30 AM</option>
+          <option value="10:00:00 AM">10:00 AM</option>
+          <option value="10:30:00 AM">10:30 AM</option>
+          <option value="11:00:00 AM">11:00 AM</option>
+          <option value="11:30:00 AM">11:30 AM</option>
+          <option value="12:00:00 PM">12:00 PM</option>
+          <option value="12:30:00 PM">12:30 PM</option>
+          <option value="1:00:00 PM">13:00 PM</option>
+          <option value= "1:30:00 PM">13:30 PM</option>
+          <option value="2:00:00 PM">14:00 PM</option>
+          <option value="2:30:00 PM">14:30 PM</option>
+          <option value="3:00:00 PM">15:00 PM</option>
+          <option value="3:30:00 PM">15:30 PM</option>
         </select>
     </div>
     <br>
-    <button type="submit" name="submit" class="btn btn-succes btn-sm">Book</button><br/>
+    <button style="background-color: blue; color: #fff; font-size: 15px; width: 60px; height: 30px;" type="submit" name="submit" class="btn btn-succes btn-sm">Book</button><br/>
 </center>
 
 </form><br><br><br>

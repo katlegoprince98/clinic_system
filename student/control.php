@@ -21,7 +21,7 @@ $campus = $_POST['campus'];
 
 // Create start and end times
 $start_time = date("H:i", strtotime("$time"));
-$end_time = date("H:i", strtotime("$start_time 30 minutes"));
+$end_time = date("H:i", strtotime("$start_time  30 minutes"));
 
 
 
@@ -46,7 +46,7 @@ if ($result->num_rows > 0) {
 
 
   if ($conn->query($sql) === TRUE) {
-    echo "";
+  
     ?>
     <script>
       window.alert("Appointment booked successfully.");

@@ -78,30 +78,10 @@ $res = mysqli_query($conn, $get);
         
       <center><br><br><br>
       <form action="#" method="post">
-    <table class="table">
-  <tr>
-    <th>Full Names</th>
-    <th>Campus</th>
-    <th>Service</th>
-    <th>Date</th>
-    <th>Status</th>
-    <th>Action</th>
-  </tr>
-  <tr>
-    
-    <td><?php echo $full_names; ?></td>
-    <td><?php echo $cam_name; ?></td>
-    <td><?php echo $ser; ?></td>
-    <td><?php echo $start  . '-' . '<br>'  . $end . ' (' .$boodate. ')'; ?></td>
-    
-    <td><?php echo $boo_status; ?></td>
-    <td><a href="cancel.php" >CANCEL</a>
-     
-  </td>
-  </tr>
-  
-</table><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-</form>
+          <label style="font-size: 13px; color:rgb(202, 242, 242); for="cancel">Reason for cancelling</label><br>
+          <textarea name="" id="" cols="30" rows="4" style="font-size: 18px;"></textarea><br>
+          <button name="cancel" style="background-color: blue; color: #fff; font-size: 15px; width: 60px; height: 30px;" type="submit">Submit</button><br>
+       </form>
 </center>
 <footer style="max-height:min-content;background-color: rgba(0, 0,0,0.5);">
     <center><p style="color:darkred;font-size: xx-large;" >Emergency Call: <a href="#">0861 960 960</a></p></center>
