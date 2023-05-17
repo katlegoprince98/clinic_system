@@ -81,7 +81,7 @@ if(isset($_POST['refer'])){
 <!DOCTYPE html>
 <html>
     <head>
-        <title> booking   </title>
+        <title> Patients   </title>
         <link rel="icon" href="../assets/images/tut.png"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -97,19 +97,20 @@ if(isset($_POST['refer'])){
         </div>  
         <center>
         <div class="list">
+            
 
        
         <form  action="#" method="post"><br>
           
              <div class="det">
-                <h4>PATIENT DETAILS</h4>
+                <h4 style="font-family: fantasy;font-weight: 300;font-size:20px;color:rgb(202, 242, 242)">PATIENT DETAILS</h4>
              </div><br><br>
-             <input type="text" name="username" placeholder="<?php echo $full_names;  ?>" readonly>
-             <input type="text" name="service" placeholder="<?php echo $ser;  ?>" readonly><br><br>
+             <input style="width: 120px; height: 30px; type="text" name="username" placeholder="<?php echo $full_names;  ?>" readonly>
+             <input style="width: 120px; height: 30px; type="text" name="service" placeholder="<?php echo $ser;  ?>" readonly><br><br>
             
              <textarea name="report" id="" cols="70" rows="10" placeholder="Type report"></textarea><br><br>
-             <button name="treat">TREATED</button>
-             <button name="refer">REFER</button>
+             <button style="background-color: blue; color: #fff; font-size: 12px; width: 60px; height: 30px;" name="treat">TREATED</button>
+             <button name="refer" style="background-color: red; color: #fff; font-size: 13px; width: 60px; height: 30px;">REFER</button>
              
 
            </div>
