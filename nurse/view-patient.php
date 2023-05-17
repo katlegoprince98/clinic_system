@@ -13,7 +13,26 @@ $get_bookings = "SELECT b.booking_id as id, u.first_name as user_name, u.last_na
  and b.booking_status = 'ACTIVE'";
 $booking_fields = mysqli_query($conn, $get_bookings);
 
-
+$hiv = "SELECT COUNT(ser_id) as hiv  FROM booking WHERE ser_id = 1 AND booking_status = 'ACTIVE'";
+$hiv_res = mysqli_query($conn, $hiv);
+while($row = mysqli_fetch_assoc($hiv_res)){
+    $hiv_tot = $row["hiv"];
+}
+$family = "SELECT COUNT(ser_id) as fam  FROM booking WHERE ser_id = 2 AND booking_status = 'ACTIVE'";
+$family_res = mysqli_query($conn, $family);
+while($row = mysqli_fetch_assoc($family_res)){
+  $fam_tot = $row["fam"];
+}
+$oral = "SELECT COUNT(ser_id) as oral  FROM booking WHERE ser_id = 3 AND booking_status = 'ACTIVE'";
+$oral_res = mysqli_query($conn, $oral);
+while($row = mysqli_fetch_assoc($oral_res)){
+  $oral_tot = $row["oral"];
+}
+$preg = "SELECT COUNT(ser_id) as preg  FROM booking WHERE ser_id = 4 AND booking_status = 'ACTIVE'";
+$preg_res = mysqli_query($conn, $preg);
+while($row = mysqli_fetch_assoc($preg_res)){
+  $preg_tot = $row["preg"];
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,7 +56,15 @@ $booking_fields = mysqli_query($conn, $get_bookings);
                 <img width="10%" width="10%" src="../assets/images/tut.png"></img><center><h1 style="font-family: fantasy;font-weight: 300;font-size:40px;color:rgb(202, 242, 242)">Clinic System</h1></center>
             </header>
         </div>  
-        
+        <center>
+        <div style="width: 150px; height: 100px; color: #fff; background-color: grey;">
+                <h5>Services</h5><br>
+                <strong>1 HIV-TESTING:</strong> <?php echo $hiv_tot; ?><br>
+                <strong>2 FAMILY PLANNING:</strong> <?php echo $fam_tot; ?><br>
+                <strong>3 ORAL_CONTRACECTIVES:</strong> <?php echo $oral_tot; ?><br>
+                <strong>4 PREGNANCY TESTING:</strong> <?php echo $preg_tot; ?><br>
+        </div>
+        </center>
         
       <center><br><br><br>
       <form action="control.php" method="post">

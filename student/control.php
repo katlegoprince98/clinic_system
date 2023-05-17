@@ -17,6 +17,7 @@ $campus = $_POST['campus'];
        $service = $_POST['service'];
        $date = $_POST['date'];
        $id = $_SESSION['userID'];
+       $current_time = date("h:i:sa");
 
 
 // Create start and end times
@@ -29,7 +30,7 @@ $end_time = date("H:i", strtotime("$start_time  30 minutes"));
 $sql = "SELECT * FROM booking WHERE start_time='$start_time' AND boodate = '$date'";
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
+if ($result->num_rows > 0 ||$start_time <  $current_time) {
   // Appointment already exists
 
   ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2023 at 10:24 AM
+-- Generation Time: May 17, 2023 at 02:31 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -52,13 +52,6 @@ CREATE TABLE `booking` (
   `user_id` int(10) NOT NULL,
   `boodate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `booking`
---
-
-INSERT INTO `booking` (`booking_id`, `booking_status`, `start_time`, `end_time`, `ser_id`, `camp_id`, `user_id`, `boodate`) VALUES
-(50, 'ACTIVE', '09:00:00', '10:00:00', 1, 1, 6, '2023-05-01');
 
 -- --------------------------------------------------------
 
@@ -120,9 +113,9 @@ CREATE TABLE `tblser` (
 
 INSERT INTO `tblser` (`ser_id`, `ser_type`) VALUES
 (1, 'HIV-TESTING'),
-(2, 'FEMILY_PLANNING'),
-(3, 'ORAL_CONTRASETIVE'),
-(4, 'AILMENT');
+(2, 'FAMILY_PLANNING'),
+(3, 'ORAL_CONTRACECTIVES'),
+(4, 'PREGNANCY TESTING');
 
 -- --------------------------------------------------------
 
@@ -196,7 +189,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `booking_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `booking_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 
 --
 -- AUTO_INCREMENT for table `campus`
@@ -208,7 +201,7 @@ ALTER TABLE `campus`
 -- AUTO_INCREMENT for table `tblfeedback`
 --
 ALTER TABLE `tblfeedback`
-  MODIFY `fee_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `fee_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tblser`
