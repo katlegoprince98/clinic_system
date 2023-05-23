@@ -99,14 +99,14 @@ $id = $_SESSION['userID'];
 
 <br><center>
     <p style="font-size: 17px; color:rgb(202, 242, 242);">open from <b> 08:00 </b> to <b> 16:00 </b></p>
-    <label style="font-size: 13px; color:rgb(202, 242, 242);" for="calender"><h3>calender</h3></label></center>
+    <label style="font-size: 19px; color:rgb(202, 242, 242);" for="calender"><h3>calender</h3></label></center>
  
     <center><div style="width:70%">
-    <label style="font-size: 13px; color:rgb(20 2, 242, 242);" for="date">Date:</label>
-        <input style="width: 120px; height: 30px;" type="text" placeholder="Date" id="date" name="date" required>
+    <label style="font-size: 19px; color:rgb(20 2, 242, 242);" for="date">Date:</label>
+        <input style="width: 190px; height: 40px;" type="text" placeholder="yy/mm/dd" id="date" name="date" required>
       
-        <label style="font-size: 13px; color:rgb(202, 242, 242);" for="time">Time:</label>
-        <select id="time" name="time" style="width: 120px; height: 30px;"  required>
+        <label style="font-size: 19px; color:rgb(202, 242, 242);" for="time">Time:</label>
+        <select id="time" name="time" style="width: 190px; height: 40px;"  required>
         <option value="" selected disabled>Select time</option>
           <option value="09:00:00 AM">9:00 AM</option>
           <option value="09:30:00 AM">09:30 AM</option>
@@ -125,7 +125,7 @@ $id = $_SESSION['userID'];
         </select>
     </div>
     <br>
-    <button style="background-color: blue; color: #fff; font-size: 15px; width: 60px; height: 30px;" type="submit" name="submit" class="btn btn-succes btn-sm">Book</button><br/>
+    <button style="background-color: blue; color: #fff; font-size: 15px; width: 150px; height: 40px;" type="submit" name="submit" class="btn btn-succes btn-sm">Book</button><br/>
 </center>
 
 </form><br><br><br>
